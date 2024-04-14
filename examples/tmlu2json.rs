@@ -22,7 +22,7 @@ struct StartStation {
     id: Id,
     latitude: f64,
     longitude: f64,
-    date: String,
+    depth: f64,
 }
 
 #[derive(Serialize)]
@@ -60,7 +60,7 @@ fn main() {
                 id: data.id,
                 latitude: data.latitude.parse::<f64>().unwrap(),
                 longitude: data.longitude.parse::<f64>().unwrap(),
-                date: data.date.clone(),
+                depth: data.depth.parse::<f64>().unwrap(),
             }),
             "CLOSURE" => Survey::Closure(Closure {
                 id: data.id,
